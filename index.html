@@ -293,7 +293,7 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-[200] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10 pointer-events-auto"
+        class="fixed inset-0 bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
       >
         <button
           id="close-menu-btn"
@@ -1419,8 +1419,20 @@
         );
 
         function toggleMenu() {
-          mobileMenu.classList.toggle("translate-x-full");
-          document.body.classList.toggle("overflow-hidden");
+          const isOpen = mobileMenu.classList.contains("translate-x-full");
+          if (isOpen) {
+            // Abriendo menú
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.style.overflow = "hidden";
+            document.body.style.position = "fixed";
+            document.body.style.width = "100%";
+          } else {
+            // Cerrando menú
+            mobileMenu.classList.add("translate-x-full");
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.width = "";
+          }
         }
 
         mobileMenuBtn.addEventListener("click", toggleMenu);
@@ -1438,6 +1450,10 @@
           link.addEventListener("click", function (e) {
             // No cerrar menú si es el botón de soluciones
             if (this.id !== "mobile-solutions-toggle") {
+              toggleMenu();
+            }
+          });
+        });
               toggleMenu();
             }
           });

@@ -168,7 +168,7 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-[200] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10 pointer-events-auto"
+        class="fixed inset-0 bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
       >
         <button
           id="close-menu-btn"
@@ -664,19 +664,26 @@
         const mobileMenu = document.getElementById("mobile-menu");
 
         if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-          mobileMenuBtn.addEventListener("click", function () {
+          function openMenu() {
             mobileMenu.classList.remove("translate-x-full");
-          });
+            document.body.style.overflow = "hidden";
+            document.body.style.position = "fixed";
+            document.body.style.width = "100%";
+          }
 
-          closeMenuBtn.addEventListener("click", function () {
+          function closeMenu() {
             mobileMenu.classList.add("translate-x-full");
-          });
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.width = "";
+          }
+
+          mobileMenuBtn.addEventListener("click", openMenu);
+          closeMenuBtn.addEventListener("click", closeMenu);
 
           const mobileLinks = mobileMenu.querySelectorAll(".mobile-link");
           mobileLinks.forEach((link) => {
-            link.addEventListener("click", function () {
-              mobileMenu.classList.add("translate-x-full");
-            });
+            link.addEventListener("click", closeMenu);
           });
         }
       });

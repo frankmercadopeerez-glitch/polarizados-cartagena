@@ -176,7 +176,7 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+        class="fixed inset-0 bg-slate-950 z-[9999] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
       >
         <button
           id="close-menu-btn"
@@ -545,18 +545,25 @@
         const mobileMenu = document.getElementById("mobile-menu");
         const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        mobileMenuBtn.addEventListener("click", () => {
+        function openMenu() {
           mobileMenu.classList.remove("translate-x-full");
-        });
+          document.body.style.overflow = "hidden";
+          document.body.style.position = "fixed";
+          document.body.style.width = "100%";
+        }
 
-        closeMenuBtn.addEventListener("click", () => {
+        function closeMenu() {
           mobileMenu.classList.add("translate-x-full");
-        });
+          document.body.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.width = "";
+        }
+
+        mobileMenuBtn.addEventListener("click", openMenu);
+        closeMenuBtn.addEventListener("click", closeMenu);
 
         mobileLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("translate-x-full");
-          });
+          link.addEventListener("click", closeMenu);
         });
 
         const navbar = document.getElementById("navbar");
