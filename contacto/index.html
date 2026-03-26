@@ -245,10 +245,11 @@
                   type="tel"
                   name="phone"
                   required
-                  pattern="\d{10}"
+                  minlength="10"
                   maxlength="10"
+                  pattern="[0-9]{10}"
                   inputmode="numeric"
-                  title="Ingresa hasta 10 dígitos numéricos"
+                  title="Ingresa 10 dígitos numéricos"
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
                   placeholder="3123456789"
                 />
@@ -544,43 +545,56 @@
     </div>
 
     <script>
-      const phoneInput = document.querySelector('input[name="phone"]');
-      const form = phoneInput?.closest("form");
+      document.addEventListener("DOMContentLoaded", function () {
+        const phoneInput = document.querySelector('input[name="phone"]');
+        if (!phoneInput) return;
 
-      if (phoneInput) {
-        phoneInput.addEventListener("input", (event) => {
-          let value = event.target.value.replace(/\D/g, "");
-          if (value.length > 10) value = value.slice(0, 10);
-          event.target.value = value;
-        });
-
-        phoneInput.addEventListener("invalid", () => {
-          phoneInput.setCustomValidity(
-            "Ingresa exactamente 10 dígitos numéricos.",
-          );
-        });
-
-        phoneInput.addEventListener("input", () => {
-          phoneInput.setCustomValidity("");
-        });
-      }
-
-      if (form) {
-        form.addEventListener("submit", (event) => {
-          if (!phoneInput) return;
-          const digits = phoneInput.value.replace(/\D/g, "");
-          if (!/^\d{10}$/.test(digits)) {
-            event.preventDefault();
-            phoneInput.setCustomValidity(
-              "Por favor ingresa 10 dígitos numéricos sin espacios ni letras",
-            );
-            phoneInput.reportValidity();
-            phoneInput.focus();
-          } else {
-            phoneInput.setCustomValidity("");
+        // Bloquear al escribir: solo permite números
+        phoneInput.addEventListener("keypress", function (e) {
+          const char = String.fromCharCode(e.which);
+          if (!/[0-9]/.test(char)) {
+            e.preventDefault();
+            this.style.borderColor = "#ef4444";
+            setTimeout(() => {
+              this.style.borderColor = "";
+            }, 300);
           }
         });
-      }
+
+        // Eliminar caracteres no numéricos pegar (Ctrl+V)
+        phoneInput.addEventListener("paste", function (e) {
+          e.preventDefault();
+          const pasted = (e.clipboardData || window.clipboardData).getData(
+            "text",
+          );
+          const digits = pasted.replace(/\D/g, "").slice(0, 10);
+          this.value = digits;
+        });
+
+        // Limitar a 10 caracteres
+        phoneInput.addEventListener("input", function () {
+          if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+          }
+        });
+
+        // Validar en submit
+        const form = phoneInput.closest("form");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            const phoneValue = phoneInput.value.trim();
+            if (!/^\d{10}$/.test(phoneValue)) {
+              e.preventDefault();
+              phoneInput.focus();
+              phoneInput.style.borderColor = "#ef4444";
+              phoneInput.style.boxShadow = "0 0 8px rgba(239, 68, 68, 0.5)";
+              return false;
+            }
+            phoneInput.style.borderColor = "";
+            phoneInput.style.boxShadow = "";
+          });
+        }
+      });
     </script>
   </body>
 </html>
