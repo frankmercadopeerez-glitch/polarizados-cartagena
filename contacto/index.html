@@ -215,11 +215,15 @@
           </h2>
           <form
             class="space-y-6"
-            onsubmit="
-              event.preventDefault();
-              alert('Gracias. En breve nos comunicaremos contigo.');
-            "
+            action="https://formspree.io/f/mpqowqdl"
+            method="POST"
           >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nueva solicitud de cotización desde polarizados-cartagena.vercel.app"
+            />
+            <input type="hidden" name="_next" value="/gracias/" />
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label class="block text-sm font-bold text-bronze-400 mb-2"
@@ -227,6 +231,7 @@
                 >
                 <input
                   type="text"
+                  name="name"
                   required
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
                   placeholder="Tu nombre"
@@ -238,6 +243,7 @@
                 >
                 <input
                   type="tel"
+                  name="phone"
                   required
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
                   placeholder="+57 3XX XXX XXXX"
@@ -251,6 +257,7 @@
               >
               <input
                 type="email"
+                name="email"
                 required
                 class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
                 placeholder="tu@email.com"
@@ -263,6 +270,7 @@
                   >Tipo de Propiedad</label
                 >
                 <select
+                  name="property"
                   required
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white focus:outline-none focus:border-bronze-400 transition"
                 >
@@ -281,6 +289,7 @@
                 >
                 <input
                   type="text"
+                  name="neighborhood"
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
                   placeholder="Ej: Bocagrande, Manga..."
                 />
@@ -295,25 +304,45 @@
                 <label
                   class="flex items-center gap-3 p-3 bg-slate-800 rounded cursor-pointer hover:bg-slate-700 transition"
                 >
-                  <input type="checkbox" class="accent-bronze-400" />
+                  <input
+                    type="checkbox"
+                    name="service[]"
+                    value="Control Solar Nanocerámica"
+                    class="accent-bronze-400"
+                  />
                   <span>Control Solar Nanocerámica</span>
                 </label>
                 <label
                   class="flex items-center gap-3 p-3 bg-slate-800 rounded cursor-pointer hover:bg-slate-700 transition"
                 >
-                  <input type="checkbox" class="accent-bronze-400" />
+                  <input
+                    type="checkbox"
+                    name="service[]"
+                    value="Películas de Seguridad"
+                    class="accent-bronze-400"
+                  />
                   <span>Películas de Seguridad</span>
                 </label>
                 <label
                   class="flex items-center gap-3 p-3 bg-slate-800 rounded cursor-pointer hover:bg-slate-700 transition"
                 >
-                  <input type="checkbox" class="accent-bronze-400" />
+                  <input
+                    type="checkbox"
+                    name="service[]"
+                    value="Esmerilados/Decorativos"
+                    class="accent-bronze-400"
+                  />
                   <span>Esmerilados/Decorativos</span>
                 </label>
                 <label
                   class="flex items-center gap-3 p-3 bg-slate-800 rounded cursor-pointer hover:bg-slate-700 transition"
                 >
-                  <input type="checkbox" class="accent-bronze-400" />
+                  <input
+                    type="checkbox"
+                    name="service[]"
+                    value="No estoy seguro"
+                    class="accent-bronze-400"
+                  />
                   <span>No estoy seguro</span>
                 </label>
               </div>
@@ -324,6 +353,7 @@
                 >Detalles Adicionales</label
               >
               <textarea
+                name="message"
                 required
                 rows="4"
                 class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
