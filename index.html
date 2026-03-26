@@ -293,7 +293,7 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+        class="fixed inset-0 bg-slate-950 z-[60] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
       >
         <button
           id="close-menu-btn"
@@ -1133,13 +1133,14 @@
 
             <form
               class="space-y-6"
-              onsubmit="
-                event.preventDefault();
-                alert(
-                  'Gracias por su solicitud. Un especialista de Polarizados Cartagena lo contactará muy pronto.',
-                );
-              "
+              action="https://formspree.io/f/mpqowqdl"
+              method="POST"
             >
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nueva solicitud de cotización desde polarizados-cartagena.vercel.app (Homepage)"
+              />
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
                   <label
@@ -1148,6 +1149,7 @@
                   >
                   <input
                     type="text"
+                    name="name"
                     required
                     class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
                     placeholder="Su Nombre o Empresa"
@@ -1160,9 +1162,15 @@
                   >
                   <input
                     type="tel"
+                    name="phone"
                     required
+                    minlength="10"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    inputmode="numeric"
+                    title="Ingresa 10 dígitos numéricos"
                     class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
-                    placeholder="+57 ..."
+                    placeholder="3123456789"
                   />
                 </div>
               </div>
@@ -1174,6 +1182,7 @@
                     >Tipo de Propiedad</label
                   >
                   <select
+                    name="property"
                     class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-600"
                   >
                     <option>Apartamento Residencial</option>
@@ -1190,6 +1199,7 @@
                   >
                   <input
                     type="text"
+                    name="neighborhood"
                     class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
                     placeholder="Ej: Bocagrande, Manga..."
                   />
@@ -1207,25 +1217,45 @@
                   <label
                     class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
                   >
-                    <input type="checkbox" class="accent-bronze-400" />
+                    <input
+                      type="checkbox"
+                      name="needs"
+                      value="Reducción de Calor"
+                      class="accent-bronze-400"
+                    />
                     Reducción de Calor
                   </label>
                   <label
                     class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
                   >
-                    <input type="checkbox" class="accent-bronze-400" />
+                    <input
+                      type="checkbox"
+                      name="needs"
+                      value="Privacidad hacia adentro"
+                      class="accent-bronze-400"
+                    />
                     Privacidad hacia adentro
                   </label>
                   <label
                     class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
                   >
-                    <input type="checkbox" class="accent-bronze-400" />
+                    <input
+                      type="checkbox"
+                      name="needs"
+                      value="Decorativo / Esmerilado"
+                      class="accent-bronze-400"
+                    />
                     Decorativo / Esmerilado
                   </label>
                   <label
                     class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
                   >
-                    <input type="checkbox" class="accent-bronze-400" />
+                    <input
+                      type="checkbox"
+                      name="needs"
+                      value="Seguridad (Anti-motín)"
+                      class="accent-bronze-400"
+                    />
                     Seguridad (Anti-motín)
                   </label>
                 </div>
@@ -1237,6 +1267,7 @@
                   >Detalles Adicionales (Opcional)</label
                 >
                 <textarea
+                  name="message"
                   rows="2"
                   class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
                   placeholder="Aprox. cuántos ventanales o metros cuadrados..."
@@ -1458,6 +1489,57 @@
           }
         ]
       }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const phoneInputs = document.querySelectorAll('input[name="phone"]');
+        phoneInputs.forEach((phoneInput) => {
+          phoneInput.addEventListener("keypress", function (e) {
+            const char = String.fromCharCode(e.which);
+            if (!/[0-9]/.test(char)) {
+              e.preventDefault();
+              this.style.borderColor = "#ef4444";
+              setTimeout(() => {
+                this.style.borderColor = "";
+              }, 300);
+            }
+          });
+
+          phoneInput.addEventListener("paste", function (e) {
+            e.preventDefault();
+            const pasted = (e.clipboardData || window.clipboardData).getData(
+              "text",
+            );
+            const digits = pasted.replace(/\D/g, "").slice(0, 10);
+            this.value = digits;
+          });
+
+          phoneInput.addEventListener("input", function () {
+            if (this.value.length > 10) {
+              this.value = this.value.slice(0, 10);
+            }
+          });
+        });
+
+        const forms = document.querySelectorAll('form[action*="formspree"]');
+        forms.forEach((form) => {
+          form.addEventListener("submit", function (e) {
+            const phoneInput = this.querySelector('input[name="phone"]');
+            if (phoneInput && !/^\d{10}$/.test(phoneInput.value.trim())) {
+              e.preventDefault();
+              phoneInput.focus();
+              phoneInput.style.borderColor = "#ef4444";
+              phoneInput.style.boxShadow = "0 0 8px rgba(239, 68, 68, 0.5)";
+              return false;
+            }
+            if (phoneInput) {
+              phoneInput.style.borderColor = "";
+              phoneInput.style.boxShadow = "";
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>

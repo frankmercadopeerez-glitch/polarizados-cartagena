@@ -79,51 +79,53 @@
   </head>
   <body class="bg-slate-950 text-slate-200 font-sans">
     <!-- Navbar -->
-    <nav class="glass-nav sticky top-0 z-50">
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
-      >
-        <a
-          href="/"
-          class="font-serif font-bold text-2xl text-bronze-400 hover:text-bronze-300 transition"
-        >
-          POLARIZADOS
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <i
+            class="ph-fill ph-buildings text-3xl text-bronze-400 group-hover:scale-110 transition-transform"
+          ></i>
+          <div class="flex flex-col">
+            <span
+              class="text-white font-serif font-bold text-xl tracking-widest leading-none group-hover:text-bronze-400 transition-colors"
+              >Polarizados Cartagena</span
+            >
+          </div>
         </a>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex gap-8 items-center">
-          <a href="/" class="text-slate-300 hover:text-bronze-400 transition"
-            >Inicio</a
-          >
-
-          <!-- Servicios Dropdown -->
+        <div class="hidden md:flex items-center gap-10">
+          <!-- Dropdown Soluciones -->
           <div class="relative group">
             <button
-              class="text-slate-300 hover:text-bronze-400 flex items-center gap-2 transition"
+              class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase transition-all flex items-center gap-2"
             >
-              Servicios
-              <i class="ph ph-caret-down text-xs"></i>
+              Soluciones
+              <i
+                class="ph ph-caret-down text-xs group-hover:text-bronze-400"
+              ></i>
             </button>
             <div
               class="absolute left-0 mt-0 w-56 bg-slate-900 border border-slate-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
             >
               <a
                 href="/servicios/polarizado-nanoceramica/"
-                class="block px-6 py-3 text-slate-300 hover:text-bronze-400 hover:bg-slate-800 transition"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
               >
-                ☀️ Control Solar Nanocerámica
+                Control Solar Nanocerámica
               </a>
               <a
                 href="/servicios/polarizado-seguridad/"
-                class="block px-6 py-3 text-slate-300 hover:text-bronze-400 hover:bg-slate-800 transition"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
               >
-                🔒 Películas de Seguridad
+                Películas de Seguridad
               </a>
               <a
                 href="/servicios/polarizado-esmerilados/"
-                class="block px-6 py-3 text-slate-300 hover:text-bronze-400 hover:bg-slate-800 transition"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
               >
-                ✨ Esmerilados
+                Esmerilados & Privacidad
               </a>
               <a
                 href="/servicios/polarizado-decorativo/"
@@ -142,20 +144,58 @@
 
           <a
             href="/contacto/"
-            class="text-slate-300 hover:text-bronze-400 transition"
-            >Contacto</a
+            class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
           >
+            Contacto
+          </a>
+          <a
+            href="/"
+            class="bg-bronze-400 hover:bg-bronze-500 text-slate-950 px-8 py-3 rounded-sm font-bold text-xs tracking-widest uppercase transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+          >
+            Cotizar Proyecto
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-bronze-400 hover:text-bronze-300">
-          <i class="ph ph-list text-2xl"></i>
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="ph ph-list text-3xl"></i>
         </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-slate-950 z-[60] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+      >
+        <button
+          id="close-menu-btn"
+          class="absolute top-6 right-6 text-white/50 hover:text-white"
+        >
+          <i class="ph ph-x text-3xl"></i>
+        </button>
+        <a
+          href="/servicios/"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Soluciones</a
+        >
+        <a
+          href="/contacto/"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Contacto</a
+        >
+        <a
+          href="/"
+          class="mobile-link text-2xl font-serif text-bronze-400 border-b border-bronze-400 pb-1"
+          >Volver Inicio</a
+        >
       </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 pt-32">
       <!-- Page Header -->
       <div class="mb-10">
         <h1
@@ -613,6 +653,31 @@
           }
         ]
       }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+          mobileMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("translate-x-full");
+          });
+
+          closeMenuBtn.addEventListener("click", function () {
+            mobileMenu.classList.add("translate-x-full");
+          });
+
+          const mobileLinks = mobileMenu.querySelectorAll(".mobile-link");
+          mobileLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("translate-x-full");
+            });
+          });
+        }
+      });
     </script>
   </body>
 </html>
