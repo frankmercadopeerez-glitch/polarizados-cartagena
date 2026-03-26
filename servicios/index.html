@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es-CO" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Servicios de Polarizado en Cartagena | Nanocerámica, Seguridad y
+      Esmerilados
+    </title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏢</text></svg>"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Descubre nuestros servicios de polarizado arquitectónico en Cartagena: control solar con nanocerámica, películas de seguridad, esmerilados y decorativos. Especialistas en protección UV, ahorro energético y privacidad."
+    />
+    <meta
+      name="keywords"
+      content="servicios polarizado Cartagena, instalación películas vidrio, control solar nanocerámica, seguridad vidrios, esmerilados arquitectónicos, decorativos para oficinas, hoteles Bocagrande"
+    />
+    <meta name="author" content="Polarizados Cartagena" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Geo Meta Tags para SEO Local -->
+    <meta name="geo.region" content="CO-BOL" />
+    <meta
+      name="geo.placename"
+      content="Cartagena de Indias, Bolívar, Colombia"
+    />
+    <meta name="geo.position" content="10.3910;-75.5138" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Servicios de Polarizado en Cartagena | Especialistas en Control Solar"
+    />
+    <meta
+      property="og:description"
+      content="Servicios profesionales de polarizado arquitectónico en Cartagena: nanocerámica, seguridad, esmerilados y decorativos."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://polarizadoscartagena.com/servicios/"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Lato", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              slate: {
+                800: "#1e293b",
+                900: "#0f172a",
+                950: "#020617",
+              },
+              bronze: {
+                400: "#d4af37",
+                500: "#c5a028",
+                600: "#b08d1e",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .glass-nav {
+        background: rgba(2, 6, 23, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .service-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100">
+    <!-- Navegación -->
+    <nav class="glass-nav sticky top-0 z-50">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+      >
+        <a
+          href="/"
+          class="font-serif font-bold text-2xl text-bronze-400 hover:text-bronze-300 transition"
+        >
+          Polarizados 🏢
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="/" class="text-slate-300 hover:text-bronze-400 transition"
+            >Inicio</a
+          >
+
+          <!-- Dropdown Servicios -->
+          <div class="relative group">
+            <button
+              class="text-bronze-400 border-b-2 border-bronze-400 hover:text-bronze-300 flex items-center gap-2 transition"
+            >
+              Servicios
+              <i class="ph ph-caret-down text-xs"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-56 bg-slate-900 border border-slate-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+            >
+              <a
+                href="/servicios/polarizado-nanoceramica/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                ☀️ Control Solar Nanocerámica
+              </a>
+              <a
+                href="/servicios/polarizado-seguridad/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                🔒 Películas de Seguridad
+              </a>
+              <a
+                href="/servicios/polarizado-esmerilados/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                ✨ Esmerilados
+              </a>
+              <a
+                href="/servicios/polarizado-decorativo/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Decorativos
+              </a>
+              <a
+                href="/servicios/smart-film/"
+                class="block px-6 py-3 text-bronze-400 font-semibold hover:text-bronze-300 hover:bg-slate-800 text-sm transition-colors"
+              >
+                Smart Film
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="/contacto/"
+            class="text-slate-300 hover:text-bronze-400 transition"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="relative py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1
+          class="font-serif text-4xl md:text-5xl font-bold mb-6 text-bronze-400"
+        >
+          Nuestros Servicios
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl mb-8">
+          Somos especialistas en soluciones de polarizado arquitectónico en
+          Cartagena, con más de 10 años de experiencia transformando vidrios en
+          espacios confortables, seguros y privados.
+        </p>
+      </div>
+    </section>
+
+    <!-- Servicios Grid -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Polarizado Control Solar -->
+          <a
+            href="/servicios/polarizado-nanoceramica/"
+            class="service-card bg-slate-900 border border-slate-800 rounded-lg p-8 group hover:border-bronze-500"
+          >
+            <div class="text-4xl mb-4">☀️</div>
+            <h2
+              class="font-serif font-bold text-2xl mb-3 text-white group-hover:text-bronze-400 transition"
+            >
+              Polarizado de Control Solar
+            </h2>
+            <p class="text-slate-400 mb-4">
+              Películas de nanocerámica que reducen hasta el 80% del calor,
+              protegen contra rayos UV y disminuyen costos de aire
+              acondicionado.
+            </p>
+            <ul class="text-slate-500 space-y-2 text-sm">
+              <li>✓ Ahorro de energía garantizado</li>
+              <li>✓ Protección UV total</li>
+              <li>✓ Instalación profesional</li>
+            </ul>
+          </a>
+
+          <!-- Polarizado de Seguridad -->
+          <a
+            href="/servicios/polarizado-seguridad/"
+            class="service-card bg-slate-900 border border-slate-800 rounded-lg p-8 group hover:border-bronze-500"
+          >
+            <div class="text-4xl mb-4">🔒</div>
+            <h2
+              class="font-serif font-bold text-2xl mb-3 text-white group-hover:text-bronze-400 transition"
+            >
+              Polarizado de Seguridad
+            </h2>
+            <p class="text-slate-400 mb-4">
+              Películas de seguridad que mantienen el vidrio integrado,
+              protegiéndote contra roturas, asaltos e impactos.
+            </p>
+            <ul class="text-slate-500 space-y-2 text-sm">
+              <li>✓ Protección contra vandalismos</li>
+              <li>✓ Certificado de seguridad</li>
+              <li>✓ Durabilidad extrema</li>
+            </ul>
+          </a>
+
+          <!-- Polarizado Esmerilados -->
+          <a
+            href="/servicios/polarizado-esmerilados/"
+            class="service-card bg-slate-900 border border-slate-800 rounded-lg p-8 group hover:border-bronze-500"
+          >
+            <div class="text-4xl mb-4">✨</div>
+            <h2
+              class="font-serif font-bold text-2xl mb-3 text-white group-hover:text-bronze-400 transition"
+            >
+              Polarizado Esmerilados
+            </h2>
+            <p class="text-slate-400 mb-4">
+              Acabados esmerilados que ofrecen privacidad total mientras
+              mantienen el paso de la luz natural.
+            </p>
+            <ul class="text-slate-500 space-y-2 text-sm">
+              <li>✓ Privacidad garantizada</li>
+              <li>✓ Diseño moderno</li>
+              <li>✓ Fácil de limpiar</li>
+            </ul>
+          </a>
+
+          <!-- Polarizado Decorativo -->
+          <a
+            href="/servicios/polarizado-decorativo/"
+            class="service-card bg-slate-900 border border-slate-800 rounded-lg p-8 group hover:border-bronze-500"
+          >
+            <div class="text-4xl mb-4">🎨</div>
+            <h2
+              class="font-serif font-bold text-2xl mb-3 text-white group-hover:text-bronze-400 transition"
+            >
+              Polarizado Decorativo
+            </h2>
+            <p class="text-slate-400 mb-4">
+              Películas decorativas personalizadas que transforman tu espacio
+              con diseños únicos y colores vibrantes.
+            </p>
+            <ul class="text-slate-500 space-y-2 text-sm">
+              <li>✓ Diseños personalizados</li>
+              <li>✓ Resistentes al decoloramiento</li>
+              <li>✓ Instalación profesional</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JSON-LD Structured Data para SEO Local -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Polarizados Cartagena",
+        "description": "Expertos en polarizado arquitectónico y películas para vidrios en Cartagena",
+        "url": "https://polarizadoscartagena.com",
+        "telephone": "+57 123 456 7890",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle de la ciudad",
+          "addressLocality": "Cartagena de Indias",
+          "addressRegion": "Bolívar",
+          "postalCode": "130001",
+          "addressCountry": "CO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "10.3910",
+          "longitude": "-75.5138"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Cartagena de Indias"
+        },
+        "priceRange": "$$"
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 mt-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Contacto Rápido</h3>
+            <p class="text-slate-400 text-sm">
+              📞
+              <a href="tel:+573044301112" class="hover:text-bronze-400"
+                >+57 304 430 1112</a
+              >
+            </p>
+            <p class="text-slate-400 text-sm">📍 Cartagena de Indias</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Navegación</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li><a href="/" class="hover:text-bronze-400">Inicio</a></li>
+              <li>
+                <a href="/servicios/" class="hover:text-bronze-400"
+                  >Servicios</a
+                >
+              </li>
+              <li>
+                <a href="/contacto/" class="hover:text-bronze-400">Contacto</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Legal</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li>
+                <a href="/terminos-condiciones/" class="hover:text-bronze-400"
+                  >Términos y Condiciones</a
+                >
+              </li>
+              <li><a href="#" class="hover:text-bronze-400">Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-slate-800 pt-6 text-center text-slate-400 text-sm"
+        >
+          <p>
+            &copy; 2026 Polarizados Cartagena. Todos los derechos reservados.
+          </p>
+          <p class="mt-1">
+            Especialistas en películas arquitectónicas • Cartagena, Colombia
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed right-4 bottom-24 z-50 flex flex-col items-center gap-2">
+      <a
+        href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-14 h-14 flex items-center justify-center rounded-full transition hover:scale-105"
+      >
+        <img
+          src="/images/whatsapp-logo.png"
+          alt="WhatsApp"
+          class="w-12 h-12 object-contain"
+        />
+      </a>
+      <a
+        href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-bronze-400/95 hover:bg-bronze-500 text-white text-xs px-3 py-1 rounded-md font-semibold shadow-lg text-center whitespace-nowrap"
+      >
+        Cotiza tu polarizado gratis
+      </a>
+    </div>
+  </body>
+</html>

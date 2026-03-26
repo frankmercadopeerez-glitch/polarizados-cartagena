@@ -1,0 +1,19 @@
+# Robots.txt para Polarizados Cartagena
+# Control de indexación y acceso de motores de búsqueda
+
+User-agent: *
+Allow: /
+Allow: /servicios/
+Allow: /servicios/polarizado-nanoceramica/
+Allow: /servicios/polarizado-seguridad/
+Allow: /servicios/polarizado-esmerilados/
+Allow: /servicios/polarizado-decorativo/
+Allow: /images/
+Disallow: /admin/
+Disallow: /*.pdf$
+
+# Velocidad de rastreo
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://polarizadoscartagena.com/sitemap.xml

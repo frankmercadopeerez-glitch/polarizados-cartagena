@@ -1,0 +1,1463 @@
+<!doctype html>
+<html lang="es-CO" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Polarizado Arquitectónico en Cartagena | Control Solar y Privacidad
+    </title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏢</text></svg>"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Expertos en polarizado arquitectónico en Cartagena. Instalación de películas de control solar, nanocerámica, seguridad y esmerilados para apartamentos, oficinas y hoteles. Reduzca el calor y ahorre energía."
+    />
+    <meta
+      name="keywords"
+      content="polarizado arquitectonico Cartagena, control solar Cartagena, peliculas para vidrios, nanoceramica ventanas, polarizado apartamentos Bocagrande, esmerilados oficinas, reduccion de calor, proteccion UV"
+    />
+    <meta name="author" content="Polarizados Cartagena" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Geo Meta Tags para SEO Local -->
+    <meta name="geo.region" content="CO-BOL" />
+    <meta
+      name="geo.placename"
+      content="Cartagena de Indias, Bolívar, Colombia"
+    />
+    <meta name="geo.position" content="10.3910;-75.5138" />
+
+    <!-- Open Graph para redes sociales -->
+    <meta
+      property="og:title"
+      content="Polarizado Arquitectónico en Cartagena | Control Solar y Privacidad"
+    />
+    <meta
+      property="og:description"
+      content="Expertos en películas de polarizado, nanocerámica y seguridad en Cartagena. Ahorra energía, protección UV y privacidad garantizada."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://polarizadoscartagena.com" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display (Lujo) & Lato (Legibilidad) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Lato", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              // Ajustamos la paleta a tonos más arquitectónicos (Carbón/Pizarra) y mantenemos el acento de lujo (Bronce/Dorado)
+              slate: {
+                800: "#1e293b",
+                900: "#0f172a",
+                950: "#020617",
+              },
+              bronze: {
+                400: "#d4af37", // Oro clásico
+                500: "#c5a028",
+                600: "#b08d1e",
+              },
+            },
+            animation: {
+              "scroll-left": "scroll-left 40s linear infinite",
+              "fade-in": "fadeIn 1s ease-out",
+            },
+            keyframes: {
+              "scroll-left": {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Custom Styles */
+      .glass-nav {
+        background: rgba(2, 6, 23, 0.85); /* Slate 950 con opacidad */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(
+          to top,
+          #020617 0%,
+          rgba(2, 6, 23, 0.6) 50%,
+          rgba(2, 6, 23, 0.2) 100%
+        );
+      }
+
+      .service-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: #d4af37;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .feature-list li::before {
+        content: "✦";
+        color: #d4af37;
+        position: absolute;
+        left: 0;
+        font-size: 0.8rem;
+      }
+
+      /* Infinite Scroll Carousel */
+      .reviews-carousel-wrapper {
+        width: 100%;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+      }
+
+      .reviews-track {
+        width: fit-content;
+      }
+
+      .reviews-track:hover {
+        animation-play-state: paused;
+      }
+
+      .review-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Utilities */
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased selection:bg-bronze-400 selection:text-white"
+  >
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <i
+            class="ph-fill ph-buildings text-3xl text-bronze-400 group-hover:scale-110 transition-transform"
+          ></i>
+          <div class="flex flex-col">
+            <span
+              class="text-white font-serif font-bold text-xl tracking-widest leading-none group-hover:text-bronze-400 transition-colors"
+              >Polarizados Cartagena</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-10">
+          <!-- Dropdown Soluciones -->
+          <div class="relative group">
+            <button
+              class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase transition-all flex items-center gap-2"
+            >
+              Soluciones
+              <i
+                class="ph ph-caret-down text-xs group-hover:text-bronze-400"
+              ></i>
+            </button>
+            <div
+              class="absolute left-0 mt-0 w-56 bg-slate-900 border border-slate-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+            >
+              <a
+                href="/servicios/polarizado-nanoceramica/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Control Solar Nanocerámica
+              </a>
+              <a
+                href="/servicios/polarizado-seguridad/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Películas de Seguridad
+              </a>
+              <a
+                href="/servicios/polarizado-esmerilados/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Esmerilados & Privacidad
+              </a>
+              <a
+                href="/servicios/polarizado-decorativo/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Decorativos
+              </a>
+              <a
+                href="/servicios/smart-film/"
+                class="block px-6 py-3 text-bronze-400 font-semibold hover:text-bronze-300 hover:bg-slate-800 text-sm transition-colors"
+              >
+                Smart Film
+              </a>
+            </div>
+          </div>
+
+          <a
+            href="#beneficios"
+            class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
+          >
+            Beneficios
+          </a>
+          <a
+            href="#proceso"
+            class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
+          >
+            Proceso
+          </a>
+          <a
+            href="#reseñas"
+            class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
+          >
+            Proyectos
+          </a>
+          <a
+            href="#contacto"
+            class="bg-bronze-400 hover:bg-bronze-500 text-slate-950 px-8 py-3 rounded-sm font-bold text-xs tracking-widest uppercase transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+          >
+            Cotizar Proyecto
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="ph ph-list text-3xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-slate-950 z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+      >
+        <button
+          id="close-menu-btn"
+          class="absolute top-6 right-6 text-white/50 hover:text-white"
+        >
+          <i class="ph ph-x text-3xl"></i>
+        </button>
+        <a
+          href="#soluciones"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Soluciones</a
+        >
+        <a
+          href="#beneficios"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Beneficios</a
+        >
+        <a
+          href="#proceso"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Proceso</a
+        >
+        <a
+          href="#reseñas"
+          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
+          >Proyectos</a
+        >
+        <a
+          href="#contacto"
+          class="mobile-link text-2xl font-serif text-bronze-400 border-b border-bronze-400 pb-1"
+          >Cotizar Ahora</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background Image (Luxury modern apartment with view) -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Apartamento de lujo con ventanales"
+          class="w-full h-full object-cover"
+        />
+        <div class="hero-overlay absolute inset-0"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 border border-white/20 bg-white/5 backdrop-blur-sm rounded-sm mb-8 animate-fade-in"
+        >
+          <i class="ph-fill ph-sun text-bronze-400"></i>
+          <span class="text-white/90 text-xs tracking-[0.2em] uppercase"
+            >Especialistas en Clima Tropical</span
+          >
+        </div>
+
+        <h1
+          class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-medium leading-tight mb-6 drop-shadow-2xl"
+        >
+          Confort Térmico & <br />
+          <span class="italic text-bronze-400 font-normal"
+            >Privacidad Absoluta</span
+          >
+        </h1>
+
+        <p
+          class="text-slate-200 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed tracking-wide"
+        >
+          Transformamos sus espacios. Películas arquitectónicas de alta
+          tecnología para apartamentos, hoteles y oficinas en Cartagena.
+          <span class="hidden md:inline"
+            >Reduzca el calor, proteja sus muebles y ahorre energía sin perder
+            la vista.</span
+          >
+        </p>
+
+        <div
+          class="flex flex-col md:flex-row gap-6 justify-center items-center"
+        >
+          <a
+            href="#contacto"
+            class="group relative px-10 py-4 bg-white text-slate-950 font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-bronze-400 hover:text-white shadow-xl"
+          >
+            <span class="relative z-10 flex items-center gap-2"
+              >Agendar Visita Técnica
+              <i
+                class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"
+              ></i>
+            </span>
+          </a>
+          <a
+            href="#soluciones"
+            class="text-white text-sm tracking-widest uppercase border-b border-white/30 pb-1 hover:border-bronze-400 hover:text-bronze-400 transition-all"
+          >
+            Ver Portafolio
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="ph-light ph-arrow-down text-white text-3xl opacity-50"></i>
+      </div>
+    </header>
+
+    <!-- Intro / Value Proposition -->
+    <section id="beneficios" class="py-24 bg-white relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-20">
+          <div class="lg:w-1/2">
+            <div class="flex items-end gap-4 mb-2">
+              <span
+                class="text-8xl font-serif text-slate-100 font-bold leading-none -mb-4 -ml-2"
+                >01</span
+              >
+              <span
+                class="text-bronze-400 font-bold tracking-widest uppercase text-sm mb-4"
+                >El Problema y la Solución</span
+              >
+            </div>
+            <h2
+              class="font-serif text-4xl md:text-5xl text-slate-900 mb-8 leading-tight"
+            >
+              El sol de Cartagena es implacable.<br />
+              <span class="italic text-slate-500"
+                >Sus ventanas no tienen que serlo.</span
+              >
+            </h2>
+            <p class="text-slate-600 mb-6 text-lg font-light leading-relaxed">
+              Vivir con la vista al mar de Bocagrande o Castillogrande es un
+              privilegio, pero los inmensos ventanales convierten los
+              apartamentos en hornos, disparando el consumo de aire
+              acondicionado y decolorando sus muebles y pisos de madera.
+            </p>
+            <p class="text-slate-600 mb-8 text-lg font-light leading-relaxed">
+              Nuestras láminas de nanocerámica actúan como un escudo invisible.
+              Rechazan hasta el
+              <strong>85% de la energía solar térmica</strong> y el
+              <strong>99% de los dañinos rayos UV</strong>, permitiendo el paso
+              de la luz natural sin distorsionar su vista.
+            </p>
+
+            <div class="grid grid-cols-2 gap-8 border-t border-slate-100 pt-8">
+              <div>
+                <h4 class="font-serif text-3xl text-slate-900 mb-1">
+                  Hasta 30%
+                </h4>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">
+                  Ahorro en Energía
+                </p>
+              </div>
+              <div>
+                <h4 class="font-serif text-3xl text-slate-900 mb-1">10 Años</h4>
+                <p class="text-xs text-slate-400 uppercase tracking-widest">
+                  Garantía de Fábrica
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 relative">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Instalación de polarizado en oficina moderna"
+              class="shadow-2xl transition-all duration-700 ease-in-out hover:scale-105 rounded-sm"
+            />
+            <div
+              class="absolute -bottom-6 -left-6 bg-slate-950 text-white p-6 shadow-xl max-w-xs"
+            >
+              <i
+                class="ph-fill ph-thermometer-cold text-3xl text-bronze-400 mb-2"
+              ></i>
+              <p class="font-serif text-lg">
+                Reduzca la temperatura interna hasta en 8°C de forma inmediata.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGH-END SERVICES GRID -->
+    <section id="soluciones" class="py-24 bg-slate-950 text-white relative">
+      <div
+        class="absolute inset-0 opacity-5"
+        style="
+          background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
+        "
+      ></div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-20">
+          <span
+            class="text-bronze-400 tracking-[0.3em] uppercase text-xs font-bold"
+            >Líneas de Producto</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl mt-4 text-white">
+            Soluciones Arquitectónicas
+          </h2>
+          <p class="text-slate-400 mt-6 max-w-2xl mx-auto font-light">
+            Seleccionamos y aplicamos películas de las mejores marcas a nivel
+            global. Evaluamos sus vidrios para recomendar la tecnología exacta
+            que su espacio necesita.
+          </p>
+          <div class="w-24 h-1 bg-bronze-400 mx-auto mt-8"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <!-- Service 1: Control Solar -->
+          <div
+            class="service-card group bg-slate-900 p-10 border border-white/5 hover:border-bronze-400/50 transition-colors shadow-2xl relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 bg-bronze-400 text-slate-950 text-[10px] font-bold px-3 py-1 uppercase tracking-wider"
+            >
+              Más Solicitado
+            </div>
+            <div
+              class="w-14 h-14 bg-slate-950 flex items-center justify-center mb-8 border border-white/10"
+            >
+              <i class="ph-thin ph-sun-dim text-3xl text-bronze-400"></i>
+            </div>
+            <h3 class="font-serif text-2xl mb-4 text-white">
+              Películas de Control Solar (Nanocerámica)
+            </h3>
+            <p
+              class="text-slate-400 font-light text-sm leading-relaxed mb-6 border-b border-white/5 pb-6"
+            >
+              Nuestra línea insignia. Tecnología basada en nano-partículas de
+              cerámica que bloquean el calor infrarrojo sin oscurecer
+              dramáticamente sus espacios.
+            </p>
+            <ul class="text-sm text-slate-300 feature-list space-y-2">
+              <li>Rechazo de calor hasta 85%</li>
+              <li>Visibilidad prístina hacia el mar/ciudad</li>
+              <li>Elimina el resplandor en pantallas</li>
+              <li>Cero interferencia con señales WiFi/Celular</li>
+            </ul>
+          </div>
+
+          <!-- Service 2: Privacidad y Decorativos -->
+          <div
+            class="service-card group bg-slate-900 p-10 border border-white/5 hover:border-bronze-400/50 transition-colors"
+          >
+            <div
+              class="w-14 h-14 bg-slate-950 flex items-center justify-center mb-8 border border-white/10"
+            >
+              <i class="ph-thin ph-intersect text-3xl text-bronze-400"></i>
+            </div>
+            <h3 class="font-serif text-2xl mb-4 text-white">
+              Esmerilados y Decorativos
+            </h3>
+            <p
+              class="text-slate-400 font-light text-sm leading-relaxed mb-6 border-b border-white/5 pb-6"
+            >
+              Privilegie la intimidad en salas de juntas, baños o fachadas bajas
+              de hoteles. Efecto de vidrio "sandblasteado" o diseños
+              arquitectónicos a medida.
+            </p>
+            <ul class="text-sm text-slate-300 feature-list space-y-2">
+              <li>Efecto Frost (Esmerilado mate)</li>
+              <li>Franjas, patrones y logotipos</li>
+              <li>Permite el paso de la luz difusa</li>
+              <li>Oculta áreas de servicio o bodegas</li>
+            </ul>
+          </div>
+
+          <!-- Service 3: Seguridad y Anti-Robo -->
+          <div
+            class="service-card group bg-slate-900 p-10 border border-white/5 hover:border-bronze-400/50 transition-colors shadow-2xl shadow-black/30"
+          >
+            <div
+              class="w-14 h-14 bg-slate-950 flex items-center justify-center mb-8 border border-white/10"
+            >
+              <i class="ph-thin ph-shield-check text-3xl text-bronze-400"></i>
+            </div>
+            <h3 class="font-serif text-2xl mb-4 text-white">
+              Películas de Seguridad
+            </h3>
+            <p
+              class="text-slate-400 font-light text-sm leading-relaxed mb-6 border-b border-white/5 pb-6"
+            >
+              Láminas de poliéster ultra-resistentes (4 a 12 milésimas) que
+              mantienen el vidrio unido en caso de impacto accidental, explosión
+              o intento de intrusión.
+            </p>
+            <ul class="text-sm text-slate-300 feature-list space-y-2">
+              <li>Evita esquirlas voladoras peligrosas</li>
+              <li>Retarda ingresos forzados (Anti-robo)</li>
+              <li>Cumple normativas de salud ocupacional</li>
+              <li>Opciones transparentes o tonalizadas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <section class="py-20 bg-slate-50">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="group relative overflow-hidden rounded-sm shadow-lg aspect-[3/4]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Apartamento moderno"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span
+                class="text-bronze-400 text-xs font-bold uppercase tracking-wider"
+                >Residencial</span
+              >
+              <h3 class="font-serif text-2xl text-white mt-2">Casas y Aptos</h3>
+            </div>
+          </div>
+          <div
+            class="group relative overflow-hidden rounded-sm shadow-lg aspect-[3/4]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Oficinas"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span
+                class="text-bronze-400 text-xs font-bold uppercase tracking-wider"
+                >Comercial</span
+              >
+              <h3 class="font-serif text-2xl text-white mt-2">
+                Oficinas Corporativas
+              </h3>
+            </div>
+          </div>
+          <div
+            class="group relative overflow-hidden rounded-sm shadow-lg aspect-[3/4]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Hotel de lujo"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span
+                class="text-bronze-400 text-xs font-bold uppercase tracking-wider"
+                >Hospitalidad</span
+              >
+              <h3 class="font-serif text-2xl text-white mt-2">
+                Hoteles Boutique
+              </h3>
+            </div>
+          </div>
+          <div
+            class="group relative overflow-hidden rounded-sm shadow-lg aspect-[3/4]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Edificio moderno"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span
+                class="text-bronze-400 text-xs font-bold uppercase tracking-wider"
+                >Institucional</span
+              >
+              <h3 class="font-serif text-2xl text-white mt-2">
+                Edificios y Fachadas
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="proceso" class="py-24 bg-white border-t border-slate-100">
+      <div class="container mx-auto px-6 text-center">
+        <span
+          class="text-bronze-400 tracking-[0.3em] uppercase text-xs font-bold"
+          >Método de Trabajo</span
+        >
+        <h2 class="font-serif text-3xl md:text-4xl mt-4 text-slate-900 mb-16">
+          Instalación Cero Estrés
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          <!-- Connecting Line -->
+          <div
+            class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 -z-10"
+          ></div>
+
+          <div class="relative bg-white p-6">
+            <div
+              class="w-24 h-24 bg-slate-950 rounded-full flex items-center justify-center text-white text-3xl font-serif font-bold mx-auto mb-6 border-4 border-white shadow-xl"
+            >
+              01
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-3">
+              Visita Técnica y Medición
+            </h4>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Vamos a su propiedad, tomamos medidas exactas de la planimetría y
+              llevamos muestrarios físicos para simular cómo se verá el tono
+              desde adentro y afuera.
+            </p>
+          </div>
+
+          <div class="relative bg-white p-6">
+            <div
+              class="w-24 h-24 bg-bronze-400 rounded-full flex items-center justify-center text-slate-950 text-3xl font-serif font-bold mx-auto mb-6 border-4 border-white shadow-xl"
+            >
+              02
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-3">
+              Preparación e Instalación
+            </h4>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Utilizamos técnicas de corte limpio y lavado a fondo del vidrio.
+              Instalamos la película sin dejar burbujas, arrugas o residuos,
+              protegiendo sus pisos y muebles durante el proceso.
+            </p>
+          </div>
+
+          <div class="relative bg-white p-6">
+            <div
+              class="w-24 h-24 bg-slate-950 rounded-full flex items-center justify-center text-white text-3xl font-serif font-bold mx-auto mb-6 border-4 border-white shadow-xl"
+            >
+              03
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-3">
+              Curado y Garantía
+            </h4>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Tras un breve periodo de curado (secado del agua de instalación),
+              le entregamos un certificado de garantía escrito que ampara la
+              película contra descamación, burbujeo o pérdida de color.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Infinite Carousel Section -->
+    <section id="reseñas" class="py-24 bg-slate-50 relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-bronze-400 rounded-full blur-[120px] opacity-10 -z-10"
+      ></div>
+      <div class="container mx-auto px-6 relative z-10 mb-12">
+        <div class="text-center">
+          <span
+            class="text-bronze-400 tracking-[0.3em] uppercase text-xs font-bold"
+            >Proyectos y Reseñas</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl mt-4 text-slate-900 mb-4">
+            Lo Que Dicen Nuestros Clientes
+          </h2>
+          <p class="text-slate-600 max-w-2xl mx-auto font-light">
+            Soluciones instaladas en los sectores más exclusivos de Cartagena y
+            la Zona Norte.
+          </p>
+          <div class="w-24 h-1 bg-bronze-400 mx-auto mt-8"></div>
+        </div>
+      </div>
+
+      <!-- Infinite Scroll Carousel -->
+      <div class="reviews-carousel-wrapper overflow-hidden">
+        <div class="reviews-track flex gap-8 animate-scroll-left">
+          <!-- Review Card 1 -->
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "El sol de la tarde en nuestro apartamento era insoportable.
+              Instalaron nanocerámica en todos los ventanales y la diferencia de
+              temperatura fue inmediata. Lo mejor es que no perdimos la vista a
+              la bahía."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Familia Vélez</p>
+              <p class="text-xs text-slate-500">Apto en Castillogrande</p>
+            </div>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "Trabajo extremadamente profesional. Polarizaron toda la fachada
+              de nuestras oficinas. Hemos notado una reducción en la cuenta de
+              luz este último mes debido al menor esfuerzo de los aires."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Edificio Corporativo</p>
+              <p class="text-xs text-slate-500">Manga, Cartagena</p>
+            </div>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "Pusimos películas esmeriladas en las mamparas de los baños y
+              película de seguridad UV en los ventanales del primer piso de
+              nuestro hotel boutique. Limpios, rápidos y sin polvo."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Hotel Boutique C.A.</p>
+              <p class="text-xs text-slate-500">Centro Histórico</p>
+            </div>
+          </div>
+
+          <!-- Review Card 4 -->
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "La protección UV salvó nuestros pisos laminados. Ya estaban
+              empezando a decolorarse por el sol. Excelente inversión para
+              proteger el patrimonio."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Andrés M.</p>
+              <p class="text-xs text-slate-500">Serena del Mar</p>
+            </div>
+          </div>
+
+          <!-- Duplicados para el efecto infinito -->
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "El sol de la tarde en nuestro apartamento era insoportable.
+              Instalaron nanocerámica en todos los ventanales y la diferencia de
+              temperatura fue inmediata. Lo mejor es que no perdimos la vista a
+              la bahía."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Familia Vélez</p>
+              <p class="text-xs text-slate-500">Apto en Castillogrande</p>
+            </div>
+          </div>
+
+          <div
+            class="review-card flex-shrink-0 w-[400px] bg-white p-8 border border-slate-100 rounded-sm shadow-lg"
+          >
+            <div class="flex items-center gap-1 mb-4">
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+              <i class="ph-fill ph-star text-bronze-400 text-lg"></i>
+            </div>
+            <p class="text-slate-700 font-light mb-6 italic leading-relaxed">
+              "Trabajo extremadamente profesional. Polarizaron toda la fachada
+              de nuestras oficinas. Hemos notado una reducción en la cuenta de
+              luz este último mes debido al menor esfuerzo de los aires."
+            </p>
+            <div class="border-t border-slate-100 pt-4">
+              <p class="font-bold text-slate-900">Edificio Corporativo</p>
+              <p class="text-xs text-slate-500">Manga, Cartagena</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="font-serif text-4xl md:text-5xl text-slate-900 text-center mb-4"
+          >
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-center text-slate-600 mb-16">
+            Resolvemos las dudas comunes sobre el polarizado arquitectónico.
+          </p>
+
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div
+              class="faq-item bg-slate-50 border border-slate-200 rounded-sm overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full p-6 text-left flex items-center justify-between hover:bg-slate-100 transition"
+              >
+                <span class="font-semibold text-slate-900 text-lg"
+                  >¿El polarizado oscurecerá mucho mi apartamento?</span
+                >
+                <i
+                  class="ph ph-caret-down text-bronze-400 text-xl transition-transform"
+                ></i>
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-300"
+              >
+                <div class="px-6 pb-6 text-slate-700 font-light">
+                  <p>
+                    No necesariamente. Las películas de
+                    <strong>Nanocerámica</strong> modernas pueden ser casi
+                    transparentes (dejando pasar hasta el 70% de luz visible) y
+                    aun así rechazar el 80% del calor infrarrojo. Usted decide
+                    el nivel de oscuridad (tono 5%, 20%, 35%, 50% o 70%) según
+                    su preferencia estética.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div
+              class="faq-item bg-slate-50 border border-slate-200 rounded-sm overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full p-6 text-left flex items-center justify-between hover:bg-slate-100 transition"
+              >
+                <span class="font-semibold text-slate-900 text-lg"
+                  >¿Cuánto dura la instalación y el material?</span
+                >
+                <i
+                  class="ph ph-caret-down text-bronze-400 text-xl transition-transform"
+                ></i>
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-300"
+              >
+                <div class="px-6 pb-6 text-slate-700 font-light">
+                  <p>
+                    La instalación en un apartamento promedio (3 a 5 ventanales)
+                    se realiza en <strong>un solo día</strong>. En cuanto al
+                    material, nuestras películas premium cuentan con garantías
+                    de fábrica de entre <strong>5 a 10 años</strong> contra
+                    decoloración, burbujas o desprendimiento.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div
+              class="faq-item bg-slate-50 border border-slate-200 rounded-sm overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full p-6 text-left flex items-center justify-between hover:bg-slate-100 transition"
+              >
+                <span class="font-semibold text-slate-900 text-lg"
+                  >¿Cómo se limpian los vidrios después de instalados?</span
+                >
+                <i
+                  class="ph ph-caret-down text-bronze-400 text-xl transition-transform"
+                ></i>
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-300"
+              >
+                <div class="px-6 pb-6 text-slate-700 font-light">
+                  <p>
+                    Es muy sencillo, pero requiere cierto cuidado. Después de 30
+                    días de la instalación (tiempo de curado), puede lavar los
+                    vidrios normalmente con agua y jabón suave o limpiavidrios
+                    sin amoníaco.
+                    <strong
+                      >Nunca use esponjas abrasivas, cuchillas o cepillos
+                      duros</strong
+                    >
+                    por la cara interna donde está la lámina.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div
+              class="faq-item bg-slate-50 border border-slate-200 rounded-sm overflow-hidden"
+            >
+              <button
+                class="faq-toggle w-full p-6 text-left flex items-center justify-between hover:bg-slate-100 transition"
+              >
+                <span class="font-semibold text-slate-900 text-lg"
+                  >¿Revisan normativas de la administración del edificio?</span
+                >
+                <i
+                  class="ph ph-caret-down text-bronze-400 text-xl transition-transform"
+                ></i>
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden opacity-0 transition-all duration-300"
+              >
+                <div class="px-6 pb-6 text-slate-700 font-light">
+                  <p>
+                    Sí. Entendemos que en edificios en Castillogrande,
+                    Bocagrande o la Zona Norte, las fachadas deben mantener
+                    uniformidad. Llevamos catálogos para asegurarnos de que el
+                    tono elegido cumpla con los manuales de convivencia de su
+                    propiedad horizontal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-slate-950 relative">
+      <div class="container mx-auto px-6 relative z-10">
+        <div
+          class="max-w-5xl mx-auto bg-white shadow-2xl overflow-hidden flex flex-col md:flex-row rounded-sm"
+        >
+          <!-- Contact Info -->
+          <div
+            class="md:w-5/12 bg-slate-900 p-12 text-white flex flex-col justify-between relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-bronze-400 rounded-full blur-[80px] opacity-20"
+            ></div>
+
+            <div>
+              <h3 class="font-serif text-3xl mb-2">Agende una Inspección</h3>
+              <p class="text-slate-400 font-light text-sm mb-12">
+                Asesoría experta directo en sus instalaciones.
+              </p>
+
+              <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                  <i class="ph-fill ph-phone text-bronze-400 text-xl mt-1"></i>
+                  <div>
+                    <p
+                      class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                    >
+                      WhatsApp Directo
+                    </p>
+                    <p class="text-lg font-serif">+57 304 430 1112</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <i
+                    class="ph-fill ph-envelope-simple text-bronze-400 text-xl mt-1"
+                  ></i>
+                  <div>
+                    <p
+                      class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                    >
+                      Correo Electrónico
+                    </p>
+                    <p class="text-sm font-light text-slate-300">
+                      ventas@cartagenatint.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <i
+                    class="ph-fill ph-map-pin text-bronze-400 text-xl mt-1"
+                  ></i>
+                  <div>
+                    <p
+                      class="text-xs uppercase tracking-widest text-slate-500 mb-1"
+                    >
+                      Cobertura
+                    </p>
+                    <p class="text-sm font-light text-slate-300">
+                      Todo Cartagena y sus alrededores. Servicio profesional en
+                      toda la región caribe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="md:w-7/12 p-12 bg-white">
+            <h3 class="font-serif text-2xl text-slate-900 mb-2">
+              Cotizar Proyecto
+            </h3>
+            <p class="text-slate-500 text-xs mb-8">
+              Déjenos sus datos y las medidas aproximadas de sus vidrios (o
+              cantidad de ventanas) para darle un estimado.
+            </p>
+
+            <form
+              class="space-y-6"
+              onsubmit="
+                event.preventDefault();
+                alert(
+                  'Gracias por su solicitud. Un especialista de Polarizados Cartagena lo contactará muy pronto.',
+                );
+              "
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                    >Nombre</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
+                    placeholder="Su Nombre o Empresa"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                    >Teléfono (WhatsApp)</label
+                  >
+                  <input
+                    type="tel"
+                    required
+                    class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
+                    placeholder="+57 ..."
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                    >Tipo de Propiedad</label
+                  >
+                  <select
+                    class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-600"
+                  >
+                    <option>Apartamento Residencial</option>
+                    <option>Casa / Villa</option>
+                    <option>Oficina Comercial</option>
+                    <option>Hotel / Hospedaje</option>
+                    <option>Local Comercial</option>
+                  </select>
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                    >Barrio / Sector</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
+                    placeholder="Ej: Bocagrande, Manga..."
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                  >Necesidad Principal</label
+                >
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-600"
+                >
+                  <label
+                    class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
+                  >
+                    <input type="checkbox" class="accent-bronze-400" />
+                    Reducción de Calor
+                  </label>
+                  <label
+                    class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
+                  >
+                    <input type="checkbox" class="accent-bronze-400" />
+                    Privacidad hacia adentro
+                  </label>
+                  <label
+                    class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
+                  >
+                    <input type="checkbox" class="accent-bronze-400" />
+                    Decorativo / Esmerilado
+                  </label>
+                  <label
+                    class="flex items-center gap-2 cursor-pointer p-2 border border-slate-100 rounded hover:bg-slate-50 transition-colors"
+                  >
+                    <input type="checkbox" class="accent-bronze-400" />
+                    Seguridad (Anti-motín)
+                  </label>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-xs uppercase tracking-widest text-slate-500 font-bold"
+                  >Detalles Adicionales (Opcional)</label
+                >
+                <textarea
+                  rows="2"
+                  class="w-full border-b border-slate-300 py-2 focus:outline-none focus:border-bronze-400 transition-colors bg-transparent text-slate-800"
+                  placeholder="Aprox. cuántos ventanales o metros cuadrados..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-slate-900 text-white font-bold text-sm tracking-widest uppercase py-4 hover:bg-bronze-400 hover:text-slate-950 transition-colors mt-4 shadow-lg"
+              >
+                Enviar Solicitud
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-white/5">
+      <div class="container mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="flex items-center gap-2">
+            <i class="ph-fill ph-buildings text-2xl text-bronze-400"></i>
+            <div>
+              <p class="text-white text-xs tracking-[0.1em] font-bold">
+                CARTAGENA
+              </p>
+              <p
+                class="text-white font-serif font-bold text-sm tracking-widest"
+              >
+                Polarizados Cartagena
+              </p>
+            </div>
+          </div>
+          <div class="text-xs text-center md:text-right font-light">
+            <p>
+              &copy; 2026 Polarizados Cartagena Premium. Todos los derechos
+              reservados.
+            </p>
+            <p class="mt-1">
+              Expertos en control solar arquitectónico en la costa caribe.
+            </p>
+            <p class="mt-1">
+              <a
+                href="/terminos-condiciones/"
+                class="text-white/80 hover:text-white underline"
+                >Términos y Condiciones</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <div class="fixed right-4 bottom-24 z-50 flex flex-col items-center gap-2">
+      <a
+        href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-14 h-14 flex items-center justify-center rounded-full transition hover:scale-105"
+      >
+        <img
+          src="/images/whatsapp-logo.png"
+          alt="WhatsApp"
+          class="w-12 h-12 object-contain"
+        />
+      </a>
+      <a
+        href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-bronze-400 hover:bg-bronze-500 text-white text-xs px-3 py-1 rounded-md font-semibold shadow-lg text-center"
+      >
+        Cotiza tu polarizado gratis
+      </a>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sticky Navigation Navbar Glass Effect
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("glass-nav", "py-4", "shadow-lg");
+            navbar.classList.remove("py-6");
+          } else {
+            navbar.classList.remove("glass-nav", "py-4", "shadow-lg");
+            navbar.classList.add("py-6");
+          }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        function toggleMenu() {
+          mobileMenu.classList.toggle("translate-x-full");
+          document.body.classList.toggle("overflow-hidden");
+        }
+
+        mobileMenuBtn.addEventListener("click", toggleMenu);
+        closeMenuBtn.addEventListener("click", toggleMenu);
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", toggleMenu);
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const answer = toggle.nextElementSibling;
+            const icon = toggle.querySelector("i");
+
+            // Cerrar otras respuestas abiertas
+            document.querySelectorAll(".faq-answer").forEach((item) => {
+              if (item !== answer) {
+                item.style.maxHeight = null;
+                item.classList.remove("opacity-100");
+                item.classList.add("opacity-0");
+                item.previousElementSibling
+                  .querySelector("i")
+                  .classList.remove("rotate-180");
+              }
+            });
+
+            // Toggle de la respuesta clickeada
+            if (answer.style.maxHeight) {
+              answer.style.maxHeight = null;
+              answer.classList.remove("opacity-100");
+              answer.classList.add("opacity-0");
+              icon.classList.remove("rotate-180");
+            } else {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              answer.classList.remove("opacity-0");
+              answer.classList.add("opacity-100");
+              icon.classList.add("rotate-180");
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- JSON-LD Structured Data para SEO Local en Cartagena -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Polarizados Cartagena",
+        "description": "Especialistas en polarizado arquitectónico, películas de control solar, nanocerámica y películas de seguridad en Cartagena",
+        "url": "https://polarizadoscartagena.com",
+        "telephone": "+57 304 430 1112",
+        "email": "ventas@cartagenatint.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Cartagena",
+          "addressLocality": "Cartagena de Indias",
+          "addressRegion": "Bolívar",
+          "postalCode": "130001",
+          "addressCountry": "CO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "10.3910",
+          "longitude": "-75.5138"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Cartagena de Indias"
+          },
+          {
+            "@type": "City",
+            "name": "Bocagrande"
+          },
+          {
+            "@type": "City",
+            "name": "Castillogrande"
+          },
+          {
+            "@type": "City",
+            "name": "Manga"
+          }
+        ],
+        "priceRange": "$$",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "sameAs": [],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Breadcrumb para mejor SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://polarizadoscartagena.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Servicios",
+            "item": "https://polarizadoscartagena.com/servicios/"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>
