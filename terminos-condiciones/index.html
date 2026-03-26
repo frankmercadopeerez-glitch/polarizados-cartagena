@@ -168,11 +168,11 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-[60] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+        class="fixed inset-0 bg-slate-950 z-[200] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10 pointer-events-auto"
       >
         <button
           id="close-menu-btn"
-          class="absolute top-6 right-6 text-white/50 hover:text-white"
+          class="absolute top-6 right-6 text-white/50 hover:text-white z-[210] transition-colors cursor-pointer"
         >
           <i class="ph ph-x text-3xl"></i>
         </button>
@@ -610,7 +610,9 @@
       </div>
     </footer>
 
-    <div class="fixed right-4 bottom-24 z-50 flex flex-col items-center gap-2">
+    <div
+      class="fixed right-4 md:bottom-24 bottom-32 z-40 flex flex-col items-center gap-2"
+    >
       <a
         href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
         target="_blank"
@@ -627,9 +629,9 @@
         href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-bronze-400/95 hover:bg-bronze-500 text-white text-xs px-3 py-1 rounded-md font-semibold shadow-lg text-center whitespace-nowrap"
+        class="bg-bronze-400 hover:bg-bronze-500 text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg text-center max-w-[90px] leading-tight"
       >
-        Cotiza tu polarizado gratis
+        Cotiza tu<br />polarizado gratis
       </a>
     </div>
 
