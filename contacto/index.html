@@ -215,7 +215,7 @@
           </h2>
           <form
             class="space-y-6"
-            action="https://formspree.io/f/mpqowqd1"
+            action="https://formspree.io/f/mpqowqdl"
             method="POST"
           >
             <input
@@ -245,8 +245,12 @@
                   type="tel"
                   name="phone"
                   required
+                  pattern="\d{10}"
+                  maxlength="10"
+                  inputmode="numeric"
+                  title="Ingresa hasta 10 dígitos numéricos"
                   class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-bronze-400 transition"
-                  placeholder="+57 3XX XXX XXXX"
+                  placeholder="3123456789"
                 />
               </div>
             </div>
