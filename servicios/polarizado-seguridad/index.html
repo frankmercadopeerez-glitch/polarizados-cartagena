@@ -76,7 +76,7 @@
   </head>
   <body class="bg-slate-950 text-slate-100">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-slate-950/80 backdrop-blur-md">
       <div class="container mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-3 group">
@@ -356,6 +356,47 @@
         </a>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const closeMenuBtn = document.getElementById("close-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        function openMenu() {
+          mobileMenu.classList.remove("translate-x-full");
+          document.body.style.overflow = "hidden";
+          document.body.style.position = "fixed";
+          document.body.style.width = "100%";
+        }
+
+        function closeMenu() {
+          mobileMenu.classList.add("translate-x-full");
+          document.body.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.width = "";
+        }
+
+        mobileMenuBtn.addEventListener("click", openMenu);
+        closeMenuBtn.addEventListener("click", closeMenu);
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("bg-slate-950/95", "py-4", "shadow-lg");
+            navbar.classList.remove("py-6", "bg-slate-950/80");
+          } else {
+            navbar.classList.remove("bg-slate-950/95", "py-4", "shadow-lg");
+            navbar.classList.add("py-6", "bg-slate-950/80");
+          }
+        });
+      });
+    </script>
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
