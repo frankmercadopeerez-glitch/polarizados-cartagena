@@ -171,19 +171,61 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-[9999] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8"
+        class="fixed top-0 right-0 h-screen w-full bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
       >
         <button
           id="close-menu-btn"
-          class="absolute top-6 right-6 text-white/50 hover:text-white"
+          class="absolute top-6 right-6 text-white/50 hover:text-white z-[210] transition-colors cursor-pointer"
         >
           <i class="ph ph-x text-3xl"></i>
         </button>
-        <a
-          href="#soluciones"
-          class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
-          >Soluciones</a
-        >
+
+        <!-- Soluciones Dropdown Mobile -->
+        <div class="w-full">
+          <button
+            id="mobile-solutions-toggle"
+            class="mobile-link text-2xl font-serif text-white hover:text-bronze-400 px-4 py-2 flex items-center justify-center gap-2 w-full"
+          >
+            Soluciones
+            <i class="ph ph-caret-down text-lg"></i>
+          </button>
+          <div
+            id="mobile-solutions-dropdown"
+            class="hidden flex flex-col gap-2 mt-2 bg-slate-900/50 rounded px-4 py-3"
+          >
+            <a
+              href="/servicios/polarizado-nanoceramica/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+            >
+              Control Solar Nanocerámica
+            </a>
+            <a
+              href="/servicios/polarizado-seguridad/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+            >
+              Películas de Seguridad
+            </a>
+            <a
+              href="/servicios/polarizado-esmerilados/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+            >
+              Esmerilados & Privacidad
+            </a>
+            <a
+              href="/servicios/polarizado-decorativo/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+            >
+              Decorativos
+            </a>
+            <a
+              href="/servicios/smart-film/"
+              class="mobile-link text-sm text-bronze-400 font-semibold hover:text-bronze-300"
+            >
+              Smart Film
+            </a>
+          </div>
+        </div>
+
         <a
           href="#beneficios"
           class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
@@ -363,6 +405,8 @@
         const closeMenuBtn = document.getElementById("close-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
         const mobileLinks = document.querySelectorAll(".mobile-link");
+        const mobileSolutionsToggle = document.getElementById("mobile-solutions-toggle");
+        const mobileSolutionsDropdown = document.getElementById("mobile-solutions-dropdown");
 
         function openMenu() {
           mobileMenu.classList.remove("translate-x-full");
@@ -378,21 +422,31 @@
           document.body.style.width = "";
         }
 
+        function toggleSolutionsDropdown() {
+          mobileSolutionsDropdown.classList.toggle("hidden");
+        }
+
         mobileMenuBtn.addEventListener("click", openMenu);
         closeMenuBtn.addEventListener("click", closeMenu);
+        mobileSolutionsToggle.addEventListener("click", toggleSolutionsDropdown);
 
         mobileLinks.forEach((link) => {
-          link.addEventListener("click", closeMenu);
+          link.addEventListener("click", (e) => {
+            // No cerrar si es el toggle de soluciones
+            if (link.id !== "mobile-solutions-toggle") {
+              closeMenu();
+            }
+          });
         });
 
         const navbar = document.getElementById("navbar");
         window.addEventListener("scroll", () => {
           if (window.scrollY > 50) {
-            navbar.classList.add("bg-slate-950/95", "py-4", "shadow-lg");
-            navbar.classList.remove("py-6", "bg-slate-950/80");
+            navbar.classList.add("py-4", "shadow-lg");
+            navbar.classList.remove("py-6");
           } else {
-            navbar.classList.remove("bg-slate-950/95", "py-4", "shadow-lg");
-            navbar.classList.add("py-6", "bg-slate-950/80");
+            navbar.classList.remove("py-4", "shadow-lg");
+            navbar.classList.add("py-6");
           }
         });
       });
