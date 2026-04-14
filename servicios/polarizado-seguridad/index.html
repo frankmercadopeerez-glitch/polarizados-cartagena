@@ -72,11 +72,24 @@
         background: rgba(2, 6, 23, 0.85);
         backdrop-filter: blur(12px);
       }
+      #mobile-menu {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
     </style>
   </head>
-  <body class="bg-slate-950 text-slate-100">
+  <body class="bg-slate-950 text-slate-100 pt-20">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-slate-950/80 backdrop-blur-md">
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 py-6 glass-nav"
+    >
       <div class="container mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-3 group">
@@ -237,6 +250,7 @@
           >Cotizar Ahora</a
         >
       </div>
+    </nav>
     <!-- Hero -->
     <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
       <div class="max-w-6xl mx-auto px-4">
@@ -405,8 +419,12 @@
         const closeMenuBtn = document.getElementById("close-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
         const mobileLinks = document.querySelectorAll(".mobile-link");
-        const mobileSolutionsToggle = document.getElementById("mobile-solutions-toggle");
-        const mobileSolutionsDropdown = document.getElementById("mobile-solutions-dropdown");
+        const mobileSolutionsToggle = document.getElementById(
+          "mobile-solutions-toggle",
+        );
+        const mobileSolutionsDropdown = document.getElementById(
+          "mobile-solutions-dropdown",
+        );
 
         function openMenu() {
           mobileMenu.classList.remove("translate-x-full");
@@ -428,7 +446,10 @@
 
         mobileMenuBtn.addEventListener("click", openMenu);
         closeMenuBtn.addEventListener("click", closeMenu);
-        mobileSolutionsToggle.addEventListener("click", toggleSolutionsDropdown);
+        mobileSolutionsToggle.addEventListener(
+          "click",
+          toggleSolutionsDropdown,
+        );
 
         mobileLinks.forEach((link) => {
           link.addEventListener("click", (e) => {
@@ -464,48 +485,71 @@
     </script>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-white/5">
-      <div class="container mx-auto px-6">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center gap-6"
-        >
-          <div class="flex items-center gap-2">
-            <i class="ph-fill ph-buildings text-2xl text-bronze-400"></i>
-            <div>
-              <p class="text-white text-xs tracking-[0.1em] font-bold">
-                CARTAGENA
-              </p>
-              <p
-                class="text-white font-serif font-bold text-sm tracking-widest"
+    <footer class="bg-slate-900 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Contacto Rápido</h3>
+            <p class="text-slate-400 text-sm">
+              📞
+              <a href="tel:+573044301112" class="hover:text-bronze-400"
+                >+57 304 430 1112</a
               >
-                Polarizados Cartagena
-              </p>
-            </div>
+            </p>
+            <p class="text-slate-400 text-sm">📍 Cartagena de Indias</p>
           </div>
-          <div class="text-xs text-center md:text-right font-light">
-            <p>
-              &copy; 2026 Polarizados Cartagena Premium. Todos los derechos
-              reservados.
-            </p>
-            <p class="mt-1">
-              Expertos en control solar arquitectónico en la costa caribe.
-            </p>
-            <p class="mt-1">
-              <a href="/terminos-condiciones/" class="text-white/80 hover:text-white underline">Términos y Condiciones</a>
-            </p>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Navegación</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li><a href="/" class="hover:text-bronze-400">Inicio</a></li>
+              <li>
+                <a href="/servicios/" class="hover:text-bronze-400"
+                  >Servicios</a
+                >
+              </li>
+              <li>
+                <a href="/contacto/" class="hover:text-bronze-400">Contacto</a>
+              </li>
+            </ul>
           </div>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Legal</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li>
+                <a href="/terminos-condiciones/" class="hover:text-bronze-400"
+                  >Términos y Condiciones</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-slate-800 pt-6 text-center text-slate-400 text-sm"
+        >
+          <p>
+            &copy; 2026 Polarizados Cartagena. Todos los derechos reservados.
+          </p>
+          <p class="mt-1">
+            Especialistas en películas arquitectónicas • Cartagena, Colombia
+          </p>
         </div>
       </div>
     </footer>
 
-    <div class="fixed right-4 md:bottom-24 bottom-32 z-40 flex flex-col items-center gap-2">
+    <div
+      class="fixed right-4 md:bottom-24 bottom-32 z-40 flex flex-col items-center gap-2"
+    >
       <a
         href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
         target="_blank"
         rel="noopener noreferrer"
         class="w-14 h-14 flex items-center justify-center rounded-full transition hover:scale-105"
       >
-        <img src="/images/whatsapp-logo.png" alt="WhatsApp" class="w-12 h-12 object-contain" />
+        <img
+          src="/images/whatsapp-logo.png"
+          alt="WhatsApp"
+          class="w-12 h-12 object-contain"
+        />
       </a>
       <a
         href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
@@ -518,8 +562,3 @@
     </div>
   </body>
 </html>
-
-
-
-
-

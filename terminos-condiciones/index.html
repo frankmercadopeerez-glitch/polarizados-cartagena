@@ -67,24 +67,33 @@
 
     <style>
       .glass-nav {
-        background: rgba(2, 6, 23, 0.95);
-        backdrop-filter: blur(10px);
+        background: rgba(2, 6, 23, 0.85);
+        backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      }
+
+      #mobile-menu {
+        will-change: transform;
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
       }
 
       html {
         scroll-behavior: smooth;
       }
+
+      body.menu-open {
+        overflow: hidden;
+      }
     </style>
   </head>
   <body class="bg-slate-950 text-slate-200 font-sans">
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav
       id="navbar"
-      class="fixed w-full z-50 transition-all duration-300 py-6 bg-slate-950/80 backdrop-blur-md"
+      class="fixed w-full z-50 transition-all duration-300 py-6 glass-nav"
     >
       <div class="container mx-auto px-6 flex justify-between items-center">
-        <!-- Logo -->
         <a href="/" class="flex items-center gap-3 group">
           <i
             class="ph-fill ph-buildings text-3xl text-bronze-400 group-hover:scale-110 transition-transform"
@@ -96,10 +105,7 @@
             >
           </div>
         </a>
-
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-10">
-          <!-- Dropdown Soluciones -->
           <div class="relative group">
             <button
               class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase transition-all flex items-center gap-2"
@@ -115,51 +121,46 @@
               <a
                 href="/servicios/polarizado-nanoceramica/"
                 class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+                >Control Solar Nanocerámica</a
               >
-                Control Solar Nanocerámica
-              </a>
               <a
                 href="/servicios/polarizado-seguridad/"
                 class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+                >Películas de Seguridad</a
               >
-                Películas de Seguridad
-              </a>
               <a
                 href="/servicios/polarizado-esmerilados/"
                 class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+                >Esmerilados & Privacidad</a
               >
-                Esmerilados & Privacidad
-              </a>
               <a
                 href="/servicios/polarizado-decorativo/"
                 class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+                >Decorativos</a
               >
-                Decorativos
-              </a>
               <a
                 href="/servicios/smart-film/"
                 class="block px-6 py-3 text-bronze-400 font-semibold hover:text-bronze-300 hover:bg-slate-800 text-sm transition-colors"
+                >Smart Film</a
               >
-                Smart Film
-              </a>
             </div>
           </div>
-
+          <a
+            href="/#beneficios"
+            class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
+            >Beneficios</a
+          >
           <a
             href="/contacto/"
             class="text-white/90 hover:text-bronze-400 text-sm tracking-widest uppercase hover:border-b hover:border-bronze-400 transition-all"
+            >Contacto</a
           >
-            Contacto
-          </a>
           <a
-            href="/"
+            href="/contacto/#contacto"
             class="bg-bronze-400 hover:bg-bronze-500 text-slate-950 px-8 py-3 rounded-sm font-bold text-xs tracking-widest uppercase transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+            >Cotizar Proyecto</a
           >
-            Cotizar Proyecto
-          </a>
         </div>
-
-        <!-- Mobile Menu Button -->
         <button
           id="mobile-menu-btn"
           class="md:hidden text-white focus:outline-none"
@@ -167,11 +168,9 @@
           <i class="ph ph-list text-3xl"></i>
         </button>
       </div>
-
-      <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
+        class="fixed top-0 right-0 h-screen w-full bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
       >
         <button
           id="close-menu-btn"
@@ -179,10 +178,49 @@
         >
           <i class="ph ph-x text-3xl"></i>
         </button>
+        <div class="w-full">
+          <button
+            id="mobile-solutions-toggle"
+            class="mobile-link text-2xl font-serif text-white hover:text-bronze-400 px-4 py-2 flex items-center justify-center gap-2 w-full"
+          >
+            Soluciones
+            <i class="ph ph-caret-down text-lg"></i>
+          </button>
+          <div
+            id="mobile-solutions-dropdown"
+            class="hidden flex flex-col gap-2 mt-2 bg-slate-900/50 rounded px-4 py-3"
+          >
+            <a
+              href="/servicios/polarizado-nanoceramica/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+              >Control Solar Nanocerámica</a
+            >
+            <a
+              href="/servicios/polarizado-seguridad/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+              >Películas de Seguridad</a
+            >
+            <a
+              href="/servicios/polarizado-esmerilados/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+              >Esmerilados & Privacidad</a
+            >
+            <a
+              href="/servicios/polarizado-decorativo/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+              >Decorativos</a
+            >
+            <a
+              href="/servicios/smart-film/"
+              class="mobile-link text-sm text-bronze-400 font-semibold hover:text-bronze-300"
+              >Smart Film</a
+            >
+          </div>
+        </div>
         <a
-          href="/servicios/"
+          href="/#beneficios"
           class="mobile-link text-2xl font-serif text-white hover:text-bronze-400"
-          >Soluciones</a
+          >Beneficios</a
         >
         <a
           href="/contacto/"
@@ -190,9 +228,9 @@
           >Contacto</a
         >
         <a
-          href="/"
+          href="/contacto/#contacto"
           class="mobile-link text-2xl font-serif text-bronze-400 border-b border-bronze-400 pb-1"
-          >Volver Inicio</a
+          >Cotizar Ahora</a
         >
       </div>
     </nav>
@@ -661,43 +699,59 @@
     </script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", () => {
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
         const closeMenuBtn = document.getElementById("close-menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        const mobileSolutionsToggle = document.getElementById(
+          "mobile-solutions-toggle",
+        );
+        const mobileSolutionsDropdown = document.getElementById(
+          "mobile-solutions-dropdown",
+        );
 
-        if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
-          function openMenu() {
-            mobileMenu.classList.remove("translate-x-full");
-            document.body.style.overflow = "hidden";
-            document.body.style.position = "fixed";
-            document.body.style.width = "100%";
-          }
-
-          function closeMenu() {
-            mobileMenu.classList.add("translate-x-full");
-            document.body.style.overflow = "";
-            document.body.style.position = "";
-            document.body.style.width = "";
-          }
-
-          mobileMenuBtn.addEventListener("click", openMenu);
-          closeMenuBtn.addEventListener("click", closeMenu);
-
-          const mobileLinks = mobileMenu.querySelectorAll(".mobile-link");
-          mobileLinks.forEach((link) => {
-            link.addEventListener("click", closeMenu);
-          });
+        function openMenu() {
+          mobileMenu.classList.remove("translate-x-full");
+          document.body.style.overflow = "hidden";
+          document.body.style.position = "fixed";
+          document.body.style.width = "100%";
         }
+
+        function closeMenu() {
+          mobileMenu.classList.add("translate-x-full");
+          document.body.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.width = "";
+        }
+
+        function toggleSolutionsDropdown() {
+          mobileSolutionsDropdown.classList.toggle("hidden");
+        }
+
+        mobileMenuBtn.addEventListener("click", openMenu);
+        closeMenuBtn.addEventListener("click", closeMenu);
+        mobileSolutionsToggle.addEventListener(
+          "click",
+          toggleSolutionsDropdown,
+        );
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            if (link.id !== "mobile-solutions-toggle") {
+              closeMenu();
+            }
+          });
+        });
 
         const navbar = document.getElementById("navbar");
         window.addEventListener("scroll", () => {
           if (window.scrollY > 50) {
-            navbar.classList.add("bg-slate-950/95", "py-4", "shadow-lg");
-            navbar.classList.remove("py-6", "bg-slate-950/80");
+            navbar.classList.add("py-4", "shadow-lg");
+            navbar.classList.remove("py-6");
           } else {
-            navbar.classList.remove("bg-slate-950/95", "py-4", "shadow-lg");
-            navbar.classList.add("py-6", "bg-slate-950/80");
+            navbar.classList.remove("py-4", "shadow-lg");
+            navbar.classList.add("py-6");
           }
         });
       });

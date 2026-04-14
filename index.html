@@ -460,6 +460,20 @@
             Ver Portafolio
           </a>
         </div>
+
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+        >
+          <div
+            class="inline-flex items-center gap-3 px-6 py-3 border border-bronze-400/30 bg-bronze-400/10 backdrop-blur-sm rounded-sm"
+          >
+            <span
+              class="text-bronze-400 font-serif text-2xl md:text-3xl font-bold"
+              >Desde $95.000</span
+            >
+            <span class="text-white/70 text-sm">COP / m² instalado</span>
+          </div>
+        </div>
       </div>
 
       <!-- Scroll Down Indicator -->
@@ -590,6 +604,12 @@
             <h3 class="font-serif text-2xl mb-4 text-white">
               Películas de Control Solar (Nanocerámica)
             </h3>
+            <div class="mb-4">
+              <span class="text-bronze-400 font-serif text-xl font-bold"
+                >$140.000</span
+              >
+              <span class="text-slate-500 text-sm"> COP / m² instalado</span>
+            </div>
             <p
               class="text-slate-400 font-light text-sm leading-relaxed mb-6 border-b border-white/5 pb-6"
             >
@@ -617,6 +637,12 @@
             <h3 class="font-serif text-2xl mb-4 text-white">
               Esmerilados y Decorativos
             </h3>
+            <div class="mb-4">
+              <span class="text-bronze-400 font-serif text-xl font-bold"
+                >Desde $95.000</span
+              >
+              <span class="text-slate-500 text-sm"> COP / m² instalado</span>
+            </div>
             <p
               class="text-slate-400 font-light text-sm leading-relaxed mb-6 border-b border-white/5 pb-6"
             >
@@ -1353,40 +1379,53 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-white/5">
-      <div class="container mx-auto px-6">
+    <footer class="bg-slate-900 border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Contacto Rápido</h3>
+            <p class="text-slate-400 text-sm">
+              📞
+              <a href="tel:+573044301112" class="hover:text-bronze-400"
+                >+57 304 430 1112</a
+              >
+            </p>
+            <p class="text-slate-400 text-sm">📍 Cartagena de Indias</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Navegación</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li><a href="/" class="hover:text-bronze-400">Inicio</a></li>
+              <li>
+                <a href="/servicios/" class="hover:text-bronze-400"
+                  >Servicios</a
+                >
+              </li>
+              <li>
+                <a href="/contacto/" class="hover:text-bronze-400">Contacto</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-bronze-400 mb-2">Legal</h3>
+            <ul class="text-slate-400 text-sm space-y-1">
+              <li>
+                <a href="/terminos-condiciones/" class="hover:text-bronze-400"
+                  >Términos y Condiciones</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
         <div
-          class="flex flex-col md:flex-row justify-between items-center gap-6"
+          class="border-t border-slate-800 pt-6 text-center text-slate-400 text-sm"
         >
-          <div class="flex items-center gap-2">
-            <i class="ph-fill ph-buildings text-2xl text-bronze-400"></i>
-            <div>
-              <p class="text-white text-xs tracking-[0.1em] font-bold">
-                CARTAGENA
-              </p>
-              <p
-                class="text-white font-serif font-bold text-sm tracking-widest"
-              >
-                Polarizados Cartagena
-              </p>
-            </div>
-          </div>
-          <div class="text-xs text-center md:text-right font-light">
-            <p>
-              &copy; 2026 Polarizados Cartagena Premium. Todos los derechos
-              reservados.
-            </p>
-            <p class="mt-1">
-              Expertos en control solar arquitectónico en la costa caribe.
-            </p>
-            <p class="mt-1">
-              <a
-                href="/terminos-condiciones/"
-                class="text-white/80 hover:text-white underline"
-                >Términos y Condiciones</a
-              >
-            </p>
-          </div>
+          <p>
+            &copy; 2026 Polarizados Cartagena. Todos los derechos reservados.
+          </p>
+          <p class="mt-1">
+            Especialistas en películas arquitectónicas • Cartagena, Colombia
+          </p>
         </div>
       </div>
     </footer>
