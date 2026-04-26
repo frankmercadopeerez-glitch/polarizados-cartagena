@@ -8,6 +8,11 @@ Allow: /servicios/polarizado-nanoceramica/
 Allow: /servicios/polarizado-seguridad/
 Allow: /servicios/polarizado-esmerilados/
 Allow: /servicios/polarizado-decorativo/
+Allow: /servicios/smart-film/
+Allow: /blog/
+Allow: /contacto/
+Allow: /gracias/
+Allow: /terminos-condiciones/
 Allow: /images/
 Disallow: /admin/
 Disallow: /*.pdf$
