@@ -68,8 +68,16 @@
 
     <style>
       .glass-nav {
-        background: rgba(2, 6, 23, 0.85);
-        backdrop-filter: blur(12px);
+        background: rgba(10, 31, 68, 0.97); /* Navy Blue */
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-transparent {
+        background: rgba(10, 31, 68, 0.85);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
       }
 
       /* Mobile Menu Smooth Transitions */
@@ -98,7 +106,7 @@
     <!-- Navigation -->
     <nav
       id="navbar"
-      class="fixed w-full z-50 transition-all duration-300 py-6 glass-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6 navbar-transparent"
     >
       <div class="container mx-auto px-6 flex justify-between items-center">
         <!-- Logo -->
@@ -129,6 +137,12 @@
             <div
               class="absolute left-0 mt-0 w-56 bg-slate-900 border border-slate-800 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
             >
+              <a
+                href="/servicios/polarizado-automotriz/"
+                class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
+              >
+                Polarizado Automotriz
+              </a>
               <a
                 href="/servicios/polarizado-nanoceramica/"
                 class="block px-6 py-3 text-white/90 hover:text-bronze-400 hover:bg-slate-800 text-sm transition-colors border-b border-slate-800"
@@ -194,7 +208,7 @@
       <!-- Mobile Menu Overlay -->
       <div
         id="mobile-menu"
-        class="fixed top-0 right-0 h-screen w-full bg-slate-950 z-[9999] translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
+        class="fixed top-0 right-0 h-screen w-full bg-[#0a1f44] z-[9999] translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-start gap-8 overflow-y-auto pt-24 pb-10"
       >
         <button
           id="close-menu-btn"
@@ -216,6 +230,12 @@
             id="mobile-solutions-dropdown"
             class="hidden flex flex-col gap-2 mt-2 bg-slate-900/50 rounded px-4 py-3"
           >
+            <a
+              href="/servicios/polarizado-automotriz/"
+              class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
+            >
+              Polarizado Automotriz
+            </a>
             <a
               href="/servicios/polarizado-nanoceramica/"
               class="mobile-link text-sm text-slate-300 hover:text-bronze-400"
@@ -263,25 +283,48 @@
     </nav>
 
     <!-- Hero -->
-    <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
-      <div class="max-w-6xl mx-auto px-4">
-        <h1
-          class="font-serif text-4xl md:text-5xl font-bold mb-6 text-bronze-400"
+    <section class="relative min-h-screen flex items-end overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="Polarizado esmerilado y privacidad para oficinas en Cartagena"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/10"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-slate-950/50 to-transparent"
+        ></div>
+      </div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pb-24 w-full">
+        <span
+          class="inline-block text-bronze-400 text-xs tracking-[0.3em] uppercase font-bold mb-5"
         >
-          Polarizado Esmerilado Moderno
+          Polarizados Cartagena &mdash; Esmerilados y Privacidad
+        </span>
+        <h1
+          class="font-serif text-5xl md:text-6xl font-bold mb-6 text-white leading-tight"
+        >
+          Polarizado Esmerilado<br />
+          <span class="text-bronze-400">Moderno</span>
         </h1>
-        <p class="text-xl text-slate-400 max-w-3xl mb-4">
+        <p
+          class="text-xl text-slate-200 max-w-2xl mb-6 font-light leading-relaxed"
+        >
           Privacidad elegante sin perder luz natural. Películas esmeriladas
           personalizables para espacios modernos en Cartagena.
         </p>
         <div
-          class="inline-flex items-center gap-3 px-5 py-3 border border-bronze-400/30 bg-bronze-400/10 rounded-sm mb-8"
+          class="inline-flex items-center gap-3 px-5 py-3 border border-bronze-400/40 bg-bronze-400/10 rounded-sm backdrop-blur-sm mb-8"
         >
           <span class="text-bronze-400 font-serif text-2xl font-bold"
             >$95.000</span
           >
-          <span class="text-slate-400 text-sm">COP / m² instalado</span>
+          <span class="text-slate-300 text-sm">COP / m² instalado</span>
         </div>
+        <br />
         <a
           href="/contacto/#contacto"
           class="group relative px-12 py-4 bg-white text-slate-950 font-bold text-sm tracking-widest uppercase overflow-hidden transition-all hover:bg-bronze-400 hover:text-white shadow-xl inline-block"
@@ -509,9 +552,9 @@
         href="https://wa.me/573044301112?text=Hola%20Polarizados%20Cartagena%2C%20quiero%20cotizar%20mi%20polarizado"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-bronze-400/95 hover:bg-bronze-500 text-white text-xs px-3 py-1 rounded-md font-semibold shadow-lg text-center whitespace-nowrap"
+        class="bg-bronze-400 hover:bg-bronze-500 text-white text-xs px-2 py-1 rounded-md font-semibold shadow-lg text-center max-w-[90px] leading-tight"
       >
-        Cotiza tu polarizado gratis
+        Cotiza tu<br />polarizado gratis
       </a>
     </div>
 
@@ -563,15 +606,17 @@
         });
 
         const navbar = document.getElementById("navbar");
-        window.addEventListener("scroll", () => {
+        const scrollHandler = () => {
           if (window.scrollY > 50) {
-            navbar.classList.add("py-4", "shadow-lg");
-            navbar.classList.remove("py-6");
+            navbar.classList.add("glass-nav", "py-4", "shadow-xl");
+            navbar.classList.remove("py-6", "navbar-transparent");
           } else {
-            navbar.classList.remove("py-4", "shadow-lg");
-            navbar.classList.add("py-6");
+            navbar.classList.remove("glass-nav", "py-4", "shadow-xl");
+            navbar.classList.add("py-6", "navbar-transparent");
           }
-        });
+        };
+
+        window.addEventListener("scroll", scrollHandler, { passive: true });
       });
     </script>
   </body>
